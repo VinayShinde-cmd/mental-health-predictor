@@ -1,0 +1,59 @@
+/* Design tokens. Contrast ratios were computed for the pairs listed in docs/testing.md. */
+:root {
+  --paper: #f5f7f5;
+  --surface: #ffffff;
+  --ink: #12302f;
+  --ink-soft: #425f5d;
+  --line: #d3ddda;
+  --line-strong: #7e9794;
+  --accent: #0b6e69;
+  --accent-hover: #095a56;
+  --accent-ink: #ffffff;
+  --band: #cde7e2;
+  --marker: #f2a93b;
+  --danger: #b3261e;
+  --danger-bg: #fcebea;
+  --warn-bg: #fff4db;
+  --warn-ink: #6b4a00;
+  --focus: #12302f;
+
+  --font-display: "Bricolage Grotesque Variable", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Instrument Sans Variable", "Segoe UI", system-ui, sans-serif;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2.5rem;
+  --space-7: 4rem;
+
+  --radius-input: 10px;
+  --radius-button: 999px;
+  --radius-panel: 20px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0d1f1f;
+    --surface: #132a2a;
+    --ink: #e5f0ed;
+    --ink-soft: #a7bfbb;
+    --line: #284441;
+    --line-strong: #5f7f7b;
+    --accent: #6fd0c5;
+    --accent-hover: #8bddd3;
+    --accent-ink: #072322;
+    --band: #1e4a46;
+    --marker: #f2b84b;
+    --danger: #ffb4ab;
+    --danger-bg: #3a1b19;
+    --warn-bg: #3a2c0b;
+    --warn-ink: #ffd98a;
+    --focus: #f2b84b;
+
+    color-scheme: dark;
+  }
+}

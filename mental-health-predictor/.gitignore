@@ -1,0 +1,28 @@
+# Secrets and local config. Only the .example files are committed.
+.env
+.env.*
+!.env.example
+
+# The real trained model is not stored in git (see docs/runbooks/model-update.md)
+backend/models/*
+!backend/models/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / frontend build
+node_modules/
+frontend/dist/
+playwright-report/
+test-results/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

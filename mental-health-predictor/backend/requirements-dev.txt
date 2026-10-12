@@ -1,0 +1,7 @@
+-r requirements.txt
+
+pytest>=8          # test runner
+httpx>=0.27        # required by FastAPI's TestClient
+ruff>=0.6          # lint + import sorting
+mypy>=1.10         # type check
+pip-audit>=2.7     # known-vulnerability scan of installed dependencies (also run in CI)

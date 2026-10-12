@@ -1,0 +1,364 @@
+/* Buttons */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0 var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-button);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 120ms ease;
+}
+
+.button--primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+.button--primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line-strong);
+}
+
+.button--secondary:hover:not(:disabled) {
+  background: var(--band);
+}
+
+.button--quiet {
+  background: transparent;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.button[aria-busy="true"] {
+  cursor: progress;
+}
+
+/* Form */
+.form {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.group {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.group__title {
+  float: left;
+  width: 100%;
+  margin-bottom: var(--space-4);
+  padding: 0;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.fields {
+  clear: both;
+  display: grid;
+  gap: var(--space-4) var(--space-5);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.field__label {
+  font-weight: 600;
+}
+
+.field__control {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 var(--space-3);
+  background: var(--surface);
+  color: var(--ink);
+  border: 1.5px solid var(--line-strong);
+  border-radius: var(--radius-input);
+  font: inherit;
+}
+
+.field__control:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.field__control[aria-invalid="true"] {
+  border-color: var(--danger);
+  border-width: 2px;
+}
+
+.field__hint {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+.field__error {
+  color: var(--danger);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* Feedback */
+.skeleton {
+  border-radius: var(--radius-input);
+  background: linear-gradient(90deg, var(--line) 0%, var(--band) 50%, var(--line) 100%);
+  background-size: 200% 100%;
+  animation: skeleton-sweep 1.4s ease-in-out infinite;
+}
+
+@keyframes skeleton-sweep {
+  from {
+    background-position: 100% 0;
+  }
+
+  to {
+    background-position: -100% 0;
+  }
+}
+
+.fields--skeleton {
+  margin-top: var(--space-2);
+}
+
+.state {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  padding-block: var(--space-4);
+}
+
+.state--error .state__title {
+  color: var(--danger);
+}
+
+.state__body {
+  color: var(--ink-soft);
+}
+
+.alert {
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-input);
+  font-weight: 600;
+}
+
+.alert--error {
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.alert--warning {
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+}
+
+/* Result panel: the one raised surface on the page */
+.result {
+  padding: var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+}
+
+.result__heading {
+  margin-bottom: var(--space-4);
+}
+
+.result__score {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 2rem + 6vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.result__band {
+  margin-top: var(--space-2);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.result__sentence {
+  margin-top: var(--space-1);
+  color: var(--ink-soft);
+}
+
+.result__status {
+  margin-bottom: var(--space-3);
+  color: var(--ink-soft);
+}
+
+.result__gap {
+  height: var(--space-4);
+}
+
+.result__warnings {
+  margin: var(--space-4) 0 0;
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-5);
+  background: var(--warn-bg);
+  color: var(--warn-ink);
+  border-radius: var(--radius-input);
+}
+
+.result__disclaimer {
+  margin-top: var(--space-4);
+  color: var(--ink-soft);
+  font-size: 0.9375rem;
+}
+
+.result__meta {
+  margin-top: var(--space-3);
+  color: var(--ink-soft);
+  font-size: 0.8125rem;
+}
+
+/* Score ruler */
+.scale {
+  margin-top: var(--space-5);
+  padding-inline: var(--space-4);
+}
+
+.scale__track {
+  position: relative;
+  height: 2.5rem;
+  margin-top: 2.25rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.scale__band {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--band);
+}
+
+.scale__tick {
+  position: absolute;
+  bottom: 0;
+  height: 0.75rem;
+  border-left: 2px solid var(--ink);
+}
+
+.scale__tick-label {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: translateX(-50%);
+  margin-top: var(--space-1);
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.scale__marker {
+  position: absolute;
+  bottom: -2px;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: -0.625rem;
+  background: var(--marker);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  transition: left 400ms ease;
+}
+
+.scale__marker-value {
+  position: absolute;
+  bottom: calc(100% + var(--space-1));
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.scale__caption {
+  margin-top: 2.25rem;
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+/* Design system page */
+.design {
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-5);
+}
+
+.design__section {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.design__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.design__stack {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 36rem;
+}
+
+.swatches {
+  display: grid;
+  gap: var(--space-4);
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.swatch {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.swatch__chip {
+  height: 3rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-input);
+}
+
+.swatch__name {
+  font-weight: 600;
+}
+
+.swatch__role {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}

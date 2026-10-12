@@ -1,0 +1,19 @@
+# Runtime dependencies. Every line has a reason (playbook: no dependency without one).
+#
+# scikit-learn MUST match the version that trained Mental_Health_Model2.pkl; the loader refuses to
+# start otherwise. In the notebook run:  import sklearn; print(sklearn.__version__)
+# The versions below are the ones available in the environment this project was written in, and the
+# ones the synthetic dev model is built with. Change scikit-learn / pandas / numpy to match your notebook.
+#
+# After your first successful install, run `pip freeze > requirements.lock.txt` and deploy from that
+# file so builds are reproducible. (It could not be generated while this project was written, because
+# the package index was unreachable.)
+
+fastapi>=0.115            # web framework + request validation
+uvicorn>=0.30             # ASGI server
+python-dotenv>=1.0        # lets `uvicorn --env-file .env` read the env file in local development
+pydantic>=2.7             # request/response models (installed with FastAPI; listed because we import it)
+scikit-learn== 1.9.0       # runs the pickled pipeline; must match the training version
+pandas==3.0.1            # builds the one-row DataFrame the pipeline expects
+numpy>=2.4.3               # pulled in by the above; the pipeline's log1p step uses it
+joblib>=1.4               # loads the .pkl file
